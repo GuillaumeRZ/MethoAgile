@@ -112,7 +112,9 @@ class QM_Shortcodes
     	  while( $my_query->have_posts() )
     		{
           $my_query->the_post();
-          $shortcode_each = '<div class="qm_quote">';
+          $post_slug = get_post_field('post_name', get_post());
+
+          $shortcode_each = '<a href="http://'.$_SERVER["HTTP_HOST"].'/quote/'.$post_slug.' "><div class="qm_quote">';
             $tweet = '';
 
             $quote_text = apply_filters('qm_quote_text', get_the_content());
@@ -142,7 +144,7 @@ class QM_Shortcodes
               $shortcode_each .= "<a href='https://twitter.com/intent/tweet?text=".esc_html($tweet)."' class='qm_quote_tweet'>Tweet</a>";
             }
 
-          $shortcode_each .= '</div>';
+          $shortcode_each .= '</div></a>';
           $shortcode .= apply_filters('qm_display_quote', $shortcode_each, get_the_ID());
     	  }
     	}
