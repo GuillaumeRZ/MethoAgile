@@ -419,3 +419,9 @@ function twentysixteen_widget_tag_cloud_args( $args ) {
 	return $args;
 }
 add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
+
+function yst_modify_post_type_supports() {
+  remove_post_type_support( 'quote', 'comments' );
+}
+
+add_action( 'init', 'yst_modify_post_type_supports', 11 );

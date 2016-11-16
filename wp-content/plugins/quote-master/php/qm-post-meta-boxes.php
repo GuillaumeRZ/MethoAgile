@@ -65,9 +65,11 @@ class QM_Post_Meta_Box
     {
       $author = get_post_meta( $post->ID, 'quote_author', true );
       $source = get_post_meta( $post->ID, 'source', true );
+      $twitter = get_post_meta( $post->ID, 'twitter', true);
       ?>
       <label>Author</label> <input type="text" name="quote_author" value="<?php echo esc_attr($author); ?>" /><br />
       <label>Source</label> <input type="text" name="quote_source" value="<?php echo esc_attr($source); ?>" /><br />
+      <label>Twitter</label> <input type="text" name="quote_twitter" value="<?php echo esc_attr($twitter); ?>" /><br />
       <?php
     }
 }
@@ -100,11 +102,15 @@ function qm_post_quote_save( $post_id, $post, $update )
   {
     update_post_meta($post_id, "quote_author", sanitize_text_field($_POST["quote_author"]));
     update_post_meta($post_id, "source", sanitize_text_field($_POST["quote_source"]));
+    update_post_meta($post_id, "twitter", sanitize_text_field($_POST["quote_twitter"]));
+
   }
   else
   {
     add_post_meta($post_id, "quote_author", sanitize_text_field($_POST["quote_author"]), true);
     add_post_meta($post_id, "source", sanitize_text_field($_POST["quote_source"]), true);
+    add_post_meta($post_id, "twitter", sanitize_text_field($_POST["quote_twitter"]), true);
+
   }
   // unhook this function so it doesn't loop infinitely
   remove_action( 'save_post', 'qm_post_quote_save', 10, 3 );
