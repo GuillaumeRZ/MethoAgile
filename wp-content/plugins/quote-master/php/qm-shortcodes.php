@@ -114,12 +114,13 @@ class QM_Shortcodes
           $my_query->the_post();
           $post_slug = get_post_field('post_name', get_post());
 
-          $shortcode_each = '<a href="http://'.$_SERVER["HTTP_HOST"].'/quote/'.$post_slug.' "><div class="qm_quote">';
+          $shortcode_each = '<div class="qm_quote">';
             $tweet = '';
 
             $quote_text = apply_filters('qm_quote_text', get_the_content());
+            $quote_text = str_replace("[thumbs-rating-buttons]", '', $quote_text);
             $tweet = '"' . $quote_text . '" ';
-            $shortcode_each .= "<span class='qm_quote_text'>$quote_text</span>";
+            $shortcode_each .= '<a href="http://'.$_SERVER["HTTP_HOST"].'/quote/'.$post_slug.'"><span class="qm_quote_text">'.$quote_text.'</span></a>';
 
             $author = get_post_meta(get_the_ID(),'quote_author',true);
             if ($author != '')
@@ -144,7 +145,9 @@ class QM_Shortcodes
               $shortcode_each .= "<a href='https://twitter.com/intent/tweet?text=".esc_html($tweet)."' class='qm_quote_tweet'>Tweet</a>";
             }
 
-          $shortcode_each .= '</div></a>';
+          $shortcode_each .= do_shortcode('[thumbs-rating-buttons]');
+          $shortcode_each .= '</div>';
+          
           $shortcode .= apply_filters('qm_display_quote', $shortcode_each, get_the_ID());
     	  }
     	}
