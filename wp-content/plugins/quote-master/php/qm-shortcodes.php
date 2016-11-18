@@ -123,6 +123,7 @@ class QM_Shortcodes
             $shortcode_each .= '<a href="http://'.$_SERVER["HTTP_HOST"].'/quote/'.$post_slug.'"><span class="qm_quote_text">'.$quote_text.'</span></a>';
 
             $author = get_post_meta(get_the_ID(),'quote_author',true);
+            $twitter = get_post_meta(get_the_ID(), 'twitter', true);
             if ($author != '')
             {
               $author = "~".$author;
@@ -149,10 +150,11 @@ class QM_Shortcodes
           // $shortcode_each .= do_shortcode('[ssba]');
           $shortcode_each .= '
           <ul class="share">
-            <a data-site="" class="ssba_facebook_share" href="http://www.facebook.com/sharer.php?u=http://'.$_SERVER["HTTP_HOST"].'/quote/'.$post_slug.'" target="_blank">
+            <a data-site="" href="http://twitter.com/share?url=http://'.$_SERVER["HTTP_HOST"].'/quote/'.$post_slug.'+'.$twitter.'"<li>to Trump</li></a>
+            <a data-site="" href="http://www.facebook.com/sharer.php?u=http://'.$_SERVER["HTTP_HOST"].'/quote/'.$post_slug.'" target="_blank">
               <li><i class="fa fa-facebook-official" aria-hidden="true"></i></li>
             </a>
-            <a data-site="" class="ssba_twitter_share" href="http://twitter.com/share?url=http://'.$_SERVER["HTTP_HOST"].'/quote/'.$post_slug.'" target="_blank">
+            <a data-site="" href="http://twitter.com/share?url=http://'.$_SERVER["HTTP_HOST"].'/quote/'.$post_slug.'" target="_blank">
               <li><i class="fa fa-twitter" aria-hidden="true" alt="Tweet about this on Twitter"></i></li>
             </a>
           </ul>
