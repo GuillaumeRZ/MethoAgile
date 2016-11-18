@@ -160,7 +160,7 @@ class Vs_Anonymous_Post_Public {
 			'post_status'=>$publish_status,
 			'post_author'=>$author,
 		);
-
+ 
 
 		$post_id = wp_insert_post($post_arguments);
 		wp_set_object_terms($current_creation_ID, 2, 'quote_category');
