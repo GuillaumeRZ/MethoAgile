@@ -12,6 +12,8 @@ body {
 	font-family: 'Source Sans Pro';
 	background-image: url('img/trump.jpg');
 	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 	color: white;
 }
 
@@ -21,15 +23,16 @@ a:hover {
 	color: black;
 }
 
-#wordpress h1 {
+.wordpress h1 {
 	text-align: center;
 	font-family: 'Playfair Display';
 	font-weight: bold;
 	font-size: 3em;
-	margin: 100px auto 110px;
+	margin: 150px auto 60px;
 }
 
-#wordpress .qm_quote_text {
+.wordpress .qm_quote_text,
+.wordpress .quoteSingle p {
 	font-family: 'Montserrat';
 	font-style: italic;
 	text-align: center;
@@ -39,72 +42,108 @@ a:hover {
 	display: block;
 	font-weight: bold;
 }
+.wordpress .quoteSingle p {
+	font-size: 32px;
+	margin-bottom: 0;
+}
 
-#wordpress ul {
+.wordpress .quoteSingle p::before,
+.wordpress .quoteSingle p::after {
+	content: '"';
+}
+
+.wordpress ul {
 	padding-left: 0;
 }
 
-ul#vote,
-#wordpress ul#share {
+ul.vote,
+.wordpress ul.share {
 	display: inline-block;
 }
 
-#wordpress div.quote {
+.wordpress div.quote {
 	position: relative;
 }
 
-#wordpress ul#vote {
+.wordpress ul.vote {
 	position: absolute;
 	bottom: 10px;
 	left: 140px;
 }
 
-#wordpress ul#share {
+.wordpress ul.share {
 	position: absolute;
 	bottom: 10px;
 	right: 140px;
 }
 
-#wordpress ul#share li {
+.wordpress .quoteSingle ul.vote {
+	position: absolute;
+	bottom: 5px;
+	left: 25px;
+}
+
+.wordpress .quoteSingle ul.share {
+	position: absolute;
+	bottom: 5px;
+	right: 25px;
+}
+
+.wordpress ul.share li {
 	margin-right: 10px;
 }
 
-#wordpress ul#share li:last-child {
+.wordpress ul.share li:last-child {
 	margin-right: 0px;
 }
 
-#wordpress ul#share li:first-child::before {
+.wordpress ul.share li:first-child::before {
 	content: '\f099';
 	font-family: 'FontAwesome';
 	margin-right: 2px;
 }
 
-#wordpress ul li {
+.wordpress ul li {
 	display: inline-block;
 }
 
-#wordpress .qm_quote {
+.wordpress .qm_quote,
+.wordpress .quoteSingle {
 	padding: 30px 50px;
 	width: 80%;
-	height: 220px;
+	min-height: 220px;
 	border-radius: 10px;
 	border: 2px solid white;
 	margin: auto;
 	box-shadow: none;
 }
 
-#wordpress .qm_quote_author {
+.wordpress .quoteSingle {
+	position: relative;
+	margin-top: 30px;
+}
+
+.quoteSingle .qm_quote_author {
+	font-size: 18px;
+	text-align: right;
+	padding: 4px;
+	font-style: italic;
+	display: block;
+	color: gray;
+}
+
+.wordpress .qm_quote_author {
 	text-align: right;
 	font-weight: 500;
 	color: white
 }
 
-#wordpress #randomize {
+.wordpress #randomize {
 	margin: 40px auto;
 	text-align: center;
 }
 
-#wordpress #randomize button {
+.wordpress #randomize button {
 	border-style: none;
 	width: 200px;
 	padding: 20px 40px;
@@ -118,8 +157,52 @@ ul#vote,
 	transition: all .3s ease-out;
 }
 
-#wordpress #randomize button:hover,
-#wordpress #randomize button:hover a {
+.wordpress #randomize button:hover,
+.wordpress #randomize button:hover a {
 	background-color: transparent;
 	color: white;
+}
+
+.wordpress .quote.quoteList .qm_quote {
+	min-height: 150px;
+	padding: 10px 50px;
+	margin-bottom: 30px;
+}
+
+.wordpress #listTitle {
+	margin-bottom: 60px;
+}
+
+.changeQuote {
+	border-style: none;
+	width: 140px;
+	padding: 5px;
+	background: white;
+	border-radius: 5px;
+	font-weight: bold;
+	font-size: 16px;
+	color: black;
+	border: 2px solid white;
+	transition: all .3s ease-out;
+}
+
+.changeQuote:hover,
+.changeQuote:hover a {
+	background-color: transparent;
+	color: white;
+}
+
+button.changeQuote--prev {
+	float: left;
+	margin: 20px 0 0 112px;
+}
+
+button.changeQuote--next {
+	float: right;
+	margin: 20px 112px 0 0;
+}
+
+#errorPage {
+	background-image: url(img/404.jpg);
+	background-size: cover;
 }
