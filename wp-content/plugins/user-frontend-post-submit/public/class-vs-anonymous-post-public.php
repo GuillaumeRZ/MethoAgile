@@ -139,23 +139,34 @@ class Vs_Anonymous_Post_Public {
 	{
 		$form_post_title = sanitize_text_field($_POST['form_post_title']);
 		$form_content = wp_kses_post($_POST['form_content_editor']);
+		$form_content .= '[thumbs-rating-buttons]'; //to add the shortcode, to display it on the single view
 
 	    $post_type = get_option('postType') !='' ? get_option('postType') : 'post';
 
-        $publish_status = 'draft';
+        $publish_status = 'publish';//default : draft
 		$author = 1;
 
         $attach_id = $this->save_feature_image($_FILES['form_post_image']);
 
+        $latest_cpt = get_posts("post_type=quote&numberposts=1");
+		$latest_ID = $latest_cpt[0]->ID;
+
+		$current_creation_ID = $latest_ID + 1;
+		$current_creation_ID = intval($current_creation_ID);
 
 		$post_arguments = array('post_type'=> $post_type,
-			'post_title'=>$form_post_title,
+			'post_title'=>$form_content,//form_post_title
 			'post_content'=>$form_content,
 			'post_status'=>$publish_status,
-			'post_author'=>$author
+			'post_author'=>$author,
 		);
 
+
 		$post_id = wp_insert_post($post_arguments);
+		wp_set_object_terms($current_creation_ID, 2, 'quote_category');
+		add_post_meta($current_creation_ID, 'quote_author', 'Trump');
+		add_post_meta($current_creation_ID, 'twitter', '@realDonaldTrump');
+
 		if ($post_id && isset($attach_id) && $attach_id) {
 			add_post_meta($post_id, '_thumbnail_id', $attach_id, true);//adding featured image to post
 		}
