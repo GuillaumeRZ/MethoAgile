@@ -28,7 +28,7 @@ $termArgs = array(
 $form ='<form method="post" action="" enctype="multipart/form-data" id="anonymous-form" class="form-wrapper">';
 
 
-$form .='<div class="control-group">';
+$form .='<div class="control-group" style="display:none">';
 $form .='<label class="control-label" >'.__( "Title", "vs-anonymous-post" ).'<span class="required">*</span></label>';
 $form .='<div class="controls">';
 $form .='<input type="text" name="form_post_title" id="form_post_title" placeholder="'.__( "Title", "vs-anonymous-post" ).'" class="form-control"/>';

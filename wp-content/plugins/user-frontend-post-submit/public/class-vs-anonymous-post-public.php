@@ -139,6 +139,7 @@ class Vs_Anonymous_Post_Public {
 	{
 		$form_post_title = sanitize_text_field($_POST['form_post_title']);
 		$form_content = wp_kses_post($_POST['form_content_editor']);
+		$form_title = $form_content;
 		$form_content .= '[thumbs-rating-buttons]'; //to add the shortcode, to display it on the single view
 
 	    $post_type = get_option('postType') !='' ? get_option('postType') : 'post';
@@ -155,7 +156,7 @@ class Vs_Anonymous_Post_Public {
 		$current_creation_ID = intval($current_creation_ID);
 
 		$post_arguments = array('post_type'=> $post_type,
-			'post_title'=>$form_content,//form_post_title
+			'post_title'=>$form_title,//form_post_title
 			'post_content'=>$form_content,
 			'post_status'=>$publish_status,
 			'post_author'=>$author,
