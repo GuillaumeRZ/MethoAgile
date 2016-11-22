@@ -6,11 +6,6 @@
 	<?php if(have_posts()): while(have_posts()): the_post(); ?>
 		<div class="quoteSingle">
 		<?php the_content(); $author = get_post_meta( $post->ID, 'quote_author', true ); echo '<span class="qm_quote_author">~'.$author.'</span>' ?>
-			<ul class="vote">
-				<li>&#8593;</li>
-				<li>&#8595;</li>
-				<li>0</li>
-			</ul>
 			<ul class="share">
 				<li>to <?php echo $author ?></li>
 				<li><i class="fa fa-facebook-official" aria-hidden="true"></i></li>
