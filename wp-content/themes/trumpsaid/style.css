@@ -206,3 +206,15 @@ button.changeQuote--next {
 	background-image: url(img/404.jpg);
 	background-size: cover;
 }
+
+nav.main-menu {
+	text-align: center;
+}
+
+nav.main-menu ul.menu {
+
+}
+
+nav.main-menu ul.menu li {
+	display: inline-block;
+}
