@@ -18,8 +18,41 @@
 			</ul>
 		</div>
 	<?php endwhile; endif;?>
-	<button class="changeQuote changeQuote--prev"><a href="">Previous quote</a></button>
-	<button class="changeQuote changeQuote--next"><a href="">Next quote</a></button>
+	<?php
+		$post_ID = get_the_id();
+		$good = false;
+		$post_Cat = null;
+		while($good != true){
+			$post_ID = $post_ID - 1;
+			$post_Cat = get_post_field('post_type', $post_ID);	
+
+			if($post_Cat === 'quote'){
+				$good = true;
+			}
+
+		}
+        $post_slug = get_post_field('post_name', $post_ID);
+
+	?>
+	<a href="<?php echo "http://".$_SERVER["HTTP_HOST"]."/quote/".$post_slug." "; ?>"><button class="changeQuote changeQuote--prev">Previous quote</button></a>
+	<?php
+		$post_ID = get_the_id();
+		$good = false;
+		$post_Cat = null;
+		while($good != true){
+			$post_ID = $post_ID + 1;
+			$post_Cat = get_post_field('post_type', $post_ID);	
+
+			if($post_Cat === 'quote'){
+				$good = true;
+			}
+
+		}
+        $post_slug = get_post_field('post_name', $post_ID);
+
+
+	?>
+	<a href="<?php echo "http://".$_SERVER["HTTP_HOST"]."/quote/".$post_slug." "; ?>"><button class="changeQuote changeQuote--next">Next quote</button></a>
 	</section>
 </div>
 
