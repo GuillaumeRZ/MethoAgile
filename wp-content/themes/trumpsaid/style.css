@@ -202,19 +202,54 @@ button.changeQuote--next {
 	margin: 20px 112px 0 0;
 }
 
-#errorPage {
-	background-image: url(img/404.jpg);
+body#error {
+	margin: 0;
+	font-family: 'Source Sans Pro';
+	background-image: url('img/404.jpg');
 	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;	
+}
+
+body#error div#errorPage {
+	margin: 250px 400px auto;
+	text-align: center;
+}
+
+div#errorPage h1 {
+	font-size: 42px;
+	text-shadow: 1px 1px 1px black;
 }
 
 nav.main-menu {
 	text-align: center;
 }
 
-nav.main-menu ul.menu {
-
+nav.main-menu ul.menu a {
+	color: white;
+	text-shadow: 1px 1px 1px black;
 }
 
 nav.main-menu ul.menu li {
 	display: inline-block;
+	text-align: center;
+	width: 120px;
+	vertical-align: middle;
+	margin: 20px auto auto;
+}
+
+nav.main-menu ul.menu li:first-child,
+nav.main-menu ul.menu li:last-child {
+	font-weight: 600;
+	font-size: 16px;
+}
+
+nav.main-menu ul.menu li:nth-child(2) {
+	background-image: url(img/logo.png);
+	height: 82px;
+	width: 100px;
+	margin: 20px 50px auto;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
 }
