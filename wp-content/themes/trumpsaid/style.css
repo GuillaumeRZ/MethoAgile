@@ -68,10 +68,10 @@ a:hover {
 ul.share {
 	display: inline-block;
 }
-
+/*
 .quoteSingle .share{
 	bottom:-5px!important;	
-}
+}*/
 
 .thumbs-rating-container {
 	padding-top: .5em;
@@ -101,16 +101,16 @@ ul.share {
 	position: relative;
 }
 
-.wordpress .quoteSingle ul.vote {
+.wordpress .quoteSingle .thumbs-rating-container {
 	position: absolute;
-	bottom: 5px;
-	left: 25px;
+	bottom: 20px;
+	left: 250px;
 }
 
 .wordpress .quoteSingle ul.share {
 	position: absolute;
-	bottom: 5px;
-	right: 25px;
+	bottom: 15px;
+	right: 220px;
 }
 
 .wordpress ul.share a {
@@ -162,7 +162,8 @@ ul.share {
 .wordpress .qm_quote_author {
 	text-align: right;
 	font-weight: 500;
-	color: white
+	color: white;
+	margin-bottom: 35px;
 }
 
 .wordpress #randomize {
