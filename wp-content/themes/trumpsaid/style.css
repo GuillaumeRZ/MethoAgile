@@ -288,6 +288,7 @@ nav.main-menu ul.menu li:nth-child(2) a {
 	border-radius: 0 5px 5px 5px;
 	padding: 5px 5px;
 	border-style: none;
+	color: black;
 }
 
 .form-wrapper .control-group:nth-child(3) img {
