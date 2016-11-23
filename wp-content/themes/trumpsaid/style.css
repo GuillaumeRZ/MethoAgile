@@ -52,6 +52,10 @@ a:hover {
 	content: '"';
 }
 
+.wordpress .quoteSingle p:nth-child(2), .wordpress .quoteSingle p:nth-child(3){
+	display:none;
+}
+
 .wordpress ul {
 	padding-left: 0;
 }
@@ -63,6 +67,10 @@ a:hover {
 .thumbs-rating-container,
 ul.share {
 	display: inline-block;
+}
+
+.quoteSingle .share{
+	bottom:-5px!important;	
 }
 
 .thumbs-rating-container {
