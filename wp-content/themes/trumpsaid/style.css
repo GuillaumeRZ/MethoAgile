@@ -104,13 +104,13 @@ ul.share {
 .wordpress .quoteSingle .thumbs-rating-container {
 	position: absolute;
 	bottom: 20px;
-	left: 250px;
+	left: 220px;
 }
 
 .wordpress .quoteSingle ul.share {
 	position: absolute;
 	bottom: 15px;
-	right: 125px;
+	right: 130px;
 }
 
 .wordpress ul.share a:last-child {
@@ -118,7 +118,7 @@ ul.share {
 	vertical-align: top;
 }
 
-.wordpress ul.share a:last-child::before {
+.wordpress .quoteSingle ul.share a:last-child::before {
 	content: '\f0ea';
 	font-family: 'FontAwesome';
 	color: white;
@@ -170,7 +170,7 @@ ul.share {
 	color: gray;
 }
 
-.wordpress .qm_quote_author {
+.wordpress .quoteSingle .qm_quote_author {
 	text-align: right;
 	font-weight: 500;
 	color: white;
