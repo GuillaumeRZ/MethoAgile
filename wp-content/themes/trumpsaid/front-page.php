@@ -10,7 +10,7 @@
 	<?php endwhile; endif;?>
 	</section>
 	<section class="container" id="randomize">
-		<button><a href="/">Randomize</a></button>
+		<a href="/"><button>Randomize</button></a>
 	</section>
 </div>
 
