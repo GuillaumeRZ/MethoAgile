@@ -4,10 +4,10 @@
 	<h1><?php bloginfo( 'name' ); ?> ...</h1>
 	<section class="container">
 	<?php if(have_posts()): while(have_posts()): the_post(); ?>
-		<div class="quoteSingle">
+		<!-- <div class="quoteSingle"> -->
 		<?php the_content();?>
-		</div>
-	<?php endwhile; endif;?>
+<!-- 		</div>
+ -->	<?php endwhile; endif;?>
 	</section>
 </div>
 

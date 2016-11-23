@@ -150,7 +150,7 @@ class QM_Shortcodes
           // $shortcode_each .= do_shortcode('[ssba]');
           $shortcode_each .= '
           <ul class="share">
-            <a data-site="" href="http://twitter.com/share?url=http://'.$_SERVER["HTTP_HOST"].'/quote/'.$post_slug.'&text='.$twitter.'">
+            <a data-site="" href="http://twitter.com/share?&text=Hey '.$twitter.', remember when you said that ? &url=http://'.$_SERVER["HTTP_HOST"].'/quote/'.$post_slug.'">
               <li>to Trump</li>
             </a>
             <a data-site="" href="http://www.facebook.com/sharer.php?u=http://'.$_SERVER["HTTP_HOST"].'/quote/'.$post_slug.'" target="_blank">
