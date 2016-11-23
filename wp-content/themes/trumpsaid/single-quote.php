@@ -10,7 +10,6 @@
 			$post_slug = get_post_field('post_name', get_post());
 			$twitter = get_post_meta(get_the_ID(), 'twitter', true);
 
-
 			echo $share_buttons = '
           <ul class="share">
             <a data-site="" href="http://twitter.com/share?&text=Hey '.$twitter.', remember when you said that ? &url=http://'.$_SERVER["HTTP_HOST"].'/quote/'.$post_slug.'">
@@ -21,6 +20,12 @@
             </a>
             <a data-site="" href="http://twitter.com/share?url=http://'.$_SERVER["HTTP_HOST"].'/quote/'.$post_slug.'" target="_blank">
               <li><i class="fa fa-twitter" aria-hidden="true" alt="Tweet about this on Twitter"></i></li>
+            </a>
+            <script>
+	new Clipboard(".btn");
+</script>
+            <a class="btn" data-clipboard-text="http://'.$_SERVER["HTTP_HOST"].'/quote/'.$post_slug.'">
+            	<li>Copy</li>
             </a>
           </ul>
           '; 

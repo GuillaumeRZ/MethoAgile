@@ -110,7 +110,18 @@ ul.share {
 .wordpress .quoteSingle ul.share {
 	position: absolute;
 	bottom: 15px;
-	right: 220px;
+	right: 125px;
+}
+
+.wordpress ul.share a:last-child {
+	padding: 0;
+	vertical-align: top;
+}
+
+.wordpress ul.share a:last-child::before {
+	content: '\f0ea';
+	font-family: 'FontAwesome';
+	color: white;
 }
 
 .wordpress ul.share a {
@@ -282,6 +293,16 @@ nav.main-menu ul li:nth-child(2) {
 nav.main-menu ul li:nth-child(2) a {
 	color: transparent;
 	text-shadow: none;	
+}
+
+.form-wrapper {
+	padding: 30px 50px;
+	width: 80%;
+	min-height: 220px;
+	border-radius: 10px;
+	border: 2px solid white;
+	margin: auto;
+	box-shadow: none;
 }
 
 .form-wrapper .control-group:nth-child(2) div.controls {
