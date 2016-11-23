@@ -98,7 +98,7 @@ if  ( ! function_exists( 'thumbs_rating_getlink' ) ):
 		$thumbs_rating_link .= $link_up;
 		$thumbs_rating_link .= ' ';
 		$thumbs_rating_link .= $link_down;
-		$thumbs_rating_link .= '<span class="thumbs-rating-already-voted" data-text="' . __('You already voted!', 'thumbs-rating') . '"></span>';
+		$thumbs_rating_link .= '<span class="thumbs-rating-already-voted" data-text="You already voted !"></span>';
 		$thumbs_rating_link .= '</div>';
 
 		return $thumbs_rating_link;
